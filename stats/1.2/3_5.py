@@ -1,8 +1,8 @@
-# statistic for AB Offensive 2 vs AB Defensive 1
-# black won 90% of the time over 20 rounds 
+# statistic for AB Defensive 2 vs AB Defensive 1
+# black won 25% of the time over 20 rounds
 
 import sys, os, multiprocessing, copy
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from components.model import *
 from components.agent import Agent
@@ -15,11 +15,11 @@ def play_single_round(round_index):
 
     while True:
         if turn == 1:
-            board, nodes, piece = Agent(boardmatrix=current_board, turn=turn, depth=5, function=4, is_alpha_beta=True, type=0).decision()
+            board, nodes, piece = Agent(boardmatrix=current_board, turn=turn, depth=5, function=3, is_alpha_beta=True, type=1).decision()
             current_board = board.getMatrix()
             b_nodes += nodes
         else:
-            board, nodes, piece = Agent(boardmatrix=current_board, turn=turn, depth=5, function=1, is_alpha_beta=True, type=0).decision()
+            board, nodes, piece = Agent(boardmatrix=current_board, turn=turn, depth=5, function=1, is_alpha_beta=True, type=1).decision()
             current_board = board.getMatrix()
             w_nodes += nodes
 

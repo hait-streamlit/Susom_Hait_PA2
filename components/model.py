@@ -24,8 +24,6 @@ five_by_ten = [
 
 MAXNUM = float("inf")
 MINNUM = -float("inf")
-MAXTUPLE = (MAXNUM, MAXNUM)
-MINTUPLE = (MINNUM, MINNUM)
 
 # direction: 1 -> left, 2 -> middle, 3 -> right
 def single_move(initial_pos, direction, turn):
